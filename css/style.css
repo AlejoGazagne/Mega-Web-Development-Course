@@ -6,16 +6,15 @@ body{
 header{
     display: flex;
     justify-content: space-between;
-    padding: 0 5%;
+    padding: 7px 5%;
     background-color: #f7f7f8;
+    align-items: center;
 }
 
 .main-nav{
-    padding: 7px;
     width: 480px;
     display: flex;
     column-gap: 40px;
-    align-items: center;
 }
 
 .main-nav a{
@@ -26,11 +25,9 @@ header{
 }
 header img{
     height: 30px;
-    padding: 7px 0 7px 0;
 }
 .main-nav a:hover{
     color: #fb6376;
-    transition-duration: 0.3s;
 }
 #selected{
     color: #5762d5;
