@@ -1,0 +1,87 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+/*-------------------------------------------------------------*/
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    background-color: #f7f7f8;
+}
+.main-nav{
+    padding: 7px;
+    width: 480px;
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+}
+
+.main-nav a{
+    font-size: 18px;
+    color: #3c404a;
+    text-decoration-line: none;
+    transition-duration: 0.3s;
+}
+header img{
+    height: 30px;
+    padding: 7px 0 7px 0;
+}
+.main-nav a:hover{
+    color: #fb6376;
+    transition-duration: 0.3s;
+}
+#selected{
+    color: #5762d5;
+}
+/*-------------------------------------------------------------*/
+form{
+    width: 400px;
+    background-color: #eeeff1;
+    border: #3c404a2f solid 1px;
+    border-radius: 25px;
+    color: #3d414a;
+    padding: 25px;
+    margin: 50px auto;
+}
+
+input{
+    width: 94%;
+    font-size: 16px;
+    margin: 0.2rem 0 0.8rem 0;
+    padding: 8px 10px;
+    border-color: #3c404a3a;
+    outline: none;
+    border-radius: 8px;
+}
+#terms{
+    width: 12px;
+    margin: 0;
+}
+form a{
+    color: #5762d5;
+}
+button{
+    width: 100%;
+    background-color: #5762d5;
+    border-radius: 12px;
+    border: none;
+    color: #eeeff1;
+    padding: 10px 8px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 1rem 0 0.2rem 0;
+    transition-duration: 0.3s;
+}
+button:hover{
+    background-color: #282e6d;
+    cursor: pointer;
+}
+
+input:focus{
+    background-color: #9faecc98;
+    outline: solid 1px #193f8698;
+}
+
+/* Comando para agrandar */
+/* transform: matrix(2, 0, 0, 2, 0, 0); */
