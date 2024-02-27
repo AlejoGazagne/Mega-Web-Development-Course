@@ -11,6 +11,16 @@ function hideReview(){
     document.querySelector(".product-img").classList.remove("hover-img");
 }
 
+var productImg = document.querySelector(".product-img")
+productImg.addEventListener("mouseover", showReview)
+productImg.addEventListener("mouseout", hideReview)
+
+function print(){
+    console.log("The video ended.")
+}
+var video = document.querySelector("#video")
+video.addEventListener("ended", print)
+
 var sun = document.getElementById("sun-icon")
 var moon = document.getElementById("moon-icon")
 var body = document.getElementsByTagName("body")[0]
@@ -27,4 +37,14 @@ function lightMode(){
     moon.style.display = "none"
     body.classList.toggle("body-dark")
     introText.style.color = "#3c404a"
+}
+
+function sum(n1, n2){
+    console.log(n1+n2)
+}
+function subtract(n1, n2){
+    console.log(n1-n2)
+}
+function calculate(p1, p2, operator){
+    operator(p1, p2)
 }
