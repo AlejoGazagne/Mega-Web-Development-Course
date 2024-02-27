@@ -2,9 +2,16 @@ body{
     font-family: sans-serif, Arial, Helvetica;
     margin: 0;
 }
+
+.body-dark{
+    background-color: #1e1e1e;
+    color: white;
+
+}
 /*-------------------------------------------------------------*/
 header{
     display: flex;
+    background-color: #eeeff1;
     justify-content: space-between;
     padding: 7px 5%;
     align-items: center;
@@ -13,7 +20,7 @@ header{
 }
 
 .main-nav{
-    width: 480px;
+    width: auto;
     display: flex;
     column-gap: 40px;
 }
@@ -33,10 +40,16 @@ header img{
 #selected{
     color: #5762d5;
 }
+
+header svg:hover{
+    cursor: pointer;
+}
+
+#moon-icon{display: none;}
 /*-------------------------Intro---------------------------*/
 #intro{
     display: flex;
-    padding: 20px 8%;
+    padding: 20px 15%;
     margin: 80px auto;
     justify-content: center;
     column-gap: 120px;
@@ -88,7 +101,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 8%;
+    padding: 0 15%;
     margin: auto;
     gap: 15px;
 }
@@ -98,11 +111,12 @@ main{
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 0 8%;
+    padding: 0 15%;
 }
 
 /*-------------------------Productos---------------------------*/
 .product-card{
+    color: #1e1e1e;
     background-color: #e9e6f0;
     border-radius: 20px;
     width: 250px;
@@ -112,6 +126,7 @@ main{
 }
 .product-img{
     border-radius: 20px 20px 0 0;
+    transition-duration: 0.3s;
 }
 .product-card:hover{
     transform: matrix(1.05, 0, 0, 1.05, 0, 0);
@@ -135,6 +150,22 @@ main{
 .product-info a:hover, .product-nav a:hover{
     color: #fb6376;
     cursor: pointer;
+}
+.review-con{
+    opacity: 0%;
+    position: absolute;
+    margin: 190px 0 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+}
+
+.hover-img{
+    filter: brightness(0.6);
+}
+.hover-review{
+    opacity: 100%;
 }
 
 #final-ele aside .title, #final-ele aside h5{color: #fb6376;}
@@ -166,6 +197,7 @@ footer a:hover{
 
 @media(max-width: 1150px){
     #intro-info h1{font-size: 20px; color: #5762d5;}
-    #intro{flex-direction: column; }
-    #intro video{padding: 30px 0;}
+    #intro-info{width: 80%;}
+    #intro{flex-wrap: wrap; column-gap: 0px;}
+    #intro video{width: 80%; margin-top: 30px;}
 }
