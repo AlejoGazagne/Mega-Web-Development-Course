@@ -39,12 +39,15 @@ function lightMode(){
     introText.style.color = "#3c404a"
 }
 
-function sum(n1, n2){
-    console.log(n1+n2)
+function CreatUser(name, lastname){
+    this.name = name;
+    this.lastname = lastname;
 }
-function subtract(n1, n2){
-    console.log(n1-n2)
-}
-function calculate(p1, p2, operator){
-    operator(p1, p2)
+
+function submitForm(){
+    userName = document.getElementById("name").value
+    userLastName = document.getElementById("lastname").value
+    var user1 = new CreatUser(userName, userLastName)
+    var greeting = "Hi " + user1.name + " " + user1.lastname + ", welcome"
+    document.getElementById("tit").textContent = greeting
 }
