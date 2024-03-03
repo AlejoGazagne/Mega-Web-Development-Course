@@ -50,7 +50,7 @@ header svg:hover{
     width: 100%;
     column-gap: 40px;
 }
-#product-main-con button{
+#product-main-con main button{
     background-color: #5762d5;
     font-size: 20px;
     color: white;
@@ -61,7 +61,7 @@ header svg:hover{
     cursor: pointer;
     transition-duration: 0.3s;
 }
-#product-main-con button:hover{
+#product-main-con main button:hover{
     background-color: #3d47b0;
 }
 #feedback{
