@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from .models import Product
 
 # Create your views here.
-
 def index(request):
     products = Product.objects.all().order_by('id')[:4]
     return render(request, "products/home.html",{
@@ -18,3 +17,9 @@ def productCat(request, product):
     
 def signup(request):
     return render(request, "products/signup.html")
+
+def productPage(request, productBrand, productSlug):
+    product = Product.objects.get(slug=productSlug)
+    return render(request, "products/product.html", {
+        "product": product
+    })

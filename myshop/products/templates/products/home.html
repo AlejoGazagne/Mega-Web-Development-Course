@@ -41,7 +41,10 @@
             <div class="product-info">
                 <h2>{{product.title}}</h2>
                 <p>{{product.description}}</p>
-                <a href="shop.html">View product</a>
+                {% if product.brand%}
+                    <p>{{product.brand.title}}</p>
+                {% endif %}
+                <a href="{% url "productPage" product.brand.title product.slug%}">View product</a>
             </div>
         </div>
         {% endfor %}
