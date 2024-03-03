@@ -1,15 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
 
 # Create your views here.
 
 def index(request):
-    user = "Alejo"
-    products_numb = 4
-    return render(request, "products/home.html", {
-            "name": user,
-            "product_numb": products_numb,
-        })
+    products = Product.objects.all().order_by('id')[:4]
+    return render(request, "products/home.html",{
+        "products": products,
+    })
 
 def productCat(request, product):
     if product == "suits" or product == "dresses" or product == "shirts" or product == "shoes":

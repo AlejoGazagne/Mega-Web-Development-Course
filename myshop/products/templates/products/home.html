@@ -4,7 +4,7 @@
 {% block description %}"This is my description"{% endblock %}
 {% block robots %}index, follow{% endblock %}
 {% block keywords %}modern black suit, Myshop{% endblock %}
-{% block css %}{%  static "products/style.css" %}{% endblock %}
+{% block css %}{% static "products/style.css" %}{% endblock %}
 {% block title %}Myshop new{% endblock %}
 
 {% block body %}
@@ -12,7 +12,7 @@
 
     <section id="intro">
         <div id="intro-info">
-            <h1 >This is my title</h1>
+            <h1>This is my title</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Aperiam repellendus ea laborum provident eum sint perspiciatis 
             accusamus esse deleniti at molestiae repudiandae exercitationem 
@@ -33,51 +33,21 @@
 
     <!--*********** Productos ***********-->
     <main>
+
+        {% for product in products %}
         <div class="product-card">
             <div class="review-con"><p>Reviews 4.8⭐</p></div>
-            <img src="{% static "products/img/suit-1.png" %}" alt="article" class="product-img">
+            <img src="{{product.image.url}}" alt="article" class="product-img">
             <div class="product-info">
-                <h2>Slim Fit 2 Button Suit</h2>
-                <p>YND Men's Slim Fit 2 Vutton 3 Piece Suit Set, Solid Blazer Jacket vest Pants & Tie</p>
+                <h2>{{product.title}}</h2>
+                <p>{{product.description}}</p>
                 <a href="shop.html">View product</a>
             </div>
         </div>
-    
-        <div class="product-card">
-            <img src="{% static "products/img/suit-2.png" %}" alt="article" class="product-img">
-            <div class="product-info">
-                <h2>Slim Fit 2 Button Suit</h2>
-                <p>YND Men's Slim Fit 2 Vutton 3 Piece Suit Set, Solid Blazer Jacket vest Pants & Tie</p>
-                <a href="shop.html">View product</a>
-            </div>
-        </div>
-    
-        <div class="product-card">
-            <img src="{% static "products/img/suit-3.png" %}" alt="article" class="product-img">
-            <div class="product-info">
-                <h2>Slim Fit 2 Button Suit</h2>
-                <p>YND Men's Slim Fit 2 Vutton 3 Piece Suit Set, Solid Blazer Jacket vest Pants & Tie</p>
-                <a href="shop.html">View product</a>
-            </div>
-        </div>
-    
-        <div class="product-card">
-            <img src="{% static "products/img/suit-4.png" %}" alt="article" class="product-img">
-            <div class="product-info">
-                <h2>Slim Fit 2 Button Suit</h2>
-                <p>YND Men's Slim Fit 2 Vutton 3 Piece Suit Set, Solid Blazer Jacket vest Pants & Tie</p>
-                <a href="shop.html">View product</a>
-            </div>
-        </div>
+        {% endfor %}
+
     </main>
-
-    <form action="">
-        <input placeholder="name" type="text" id="name">
-        <input placeholder="lastname" type="text" id="lastname">
-        <button type="button" onclick="submitForm()">Submit</button>
-    </form>
-    <h2 id="tit">This is my title</h2>
-
+    
     <!--*********** Footer ***********-->
     <footer>
         <p>Copyright</p>
