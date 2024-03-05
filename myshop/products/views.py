@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Product
+from .forms import FeedbackForm
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -20,13 +22,20 @@ def signup(request):
 
 def productPage(request, productBrand, productSlug):
     product = Product.objects.get(slug=productSlug)
+    form = FeedbackForm()
     if request.method == "GET":
         return render(request, "products/product.html", {
-            "product": product
+            "product": product,
+            "form": form
         })
     else:
-        result = request.POST["username"]
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            messages.success(request, "You feedback was submites successfully")
+            form = FeedbackForm()
+            
         return render(request, "products/product.html", {
             "product": product,
-            "result": result
+            "form": form
         })
